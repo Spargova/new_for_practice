@@ -1,5 +1,5 @@
 
-function length(array)
+function length(array);
 console.log("Length of array is ---", array.length);
  
 function allEvenlength(array){
