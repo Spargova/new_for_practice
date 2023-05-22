@@ -19,7 +19,7 @@ let array = [5, 89, -4, 32, -56, 7, 43, -1 , 0, -777, 46, -7];
 
 //функция вывода паследнего четного числа массива (первый вариант)
 function even(array){
-  let tmp=[0];
+  let tmp=array[0];
   for(i=0; i<array.length; i++){
   if(array[i]%2==0){
     tmp = array[i];
