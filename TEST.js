@@ -1,12 +1,7 @@
 
-function length(array){
-  for(i=0; i<array.length; i++){
-     if(i<array.length){
-        i++
-     }
-    }
-  }
-
+function length(array)
+console.log("Length of array is ---", array.length);
+ 
 function allEvenlength(array){
  let tmp=[];
   for(i=0; i<array.length; i++){
@@ -48,7 +43,7 @@ function allNegativelength(array){
 }
 
 function minElement(array){
-  let minimum = [0];
+  let minimum = array[0];
   for(i=0; i<array.length; i++){
     if(array[i]<minimum){
       minimum=array[i];
@@ -58,7 +53,7 @@ function minElement(array){
 }
 
 function maxElement(array){
-  let maximum = [0];
+  let maximum = array[0];
   for(i=0; i<array.length; i++){
     if(array[i]>maximum){
       maximum=array[i];
@@ -69,7 +64,7 @@ function maxElement(array){
 
 let array = [ 5, 89, -4, 32, -56, 7, 43, -1, 0, -777, 46, -7];
 
-console.log("Length of array is ---", array.length);
+
 console.log("Length of all even element is ---", allEvenlength(array));
 console.log("length of all odd elements is ---", allOddLength(array));
 console.log("Length of all positive elements is ---", allPositivelength(array));
