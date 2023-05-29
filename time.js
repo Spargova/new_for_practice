@@ -36,3 +36,46 @@ console.log(date.toLocaleString('en-US'));
 console.log(date.toLocaleString('en-GB'));
 
 
+function getWeekDay (date) {
+    const converted = new Date (date);
+    const week = converted.getDay();
+    if (week===0){
+        return "Sunday"
+    }
+    else if (week===1){
+        return "Monday"
+    }
+    else if (week===2){
+        return "Tuesday"
+    }
+    else if(week===3){
+        return "Wednesday"
+    }
+    else if(week===4){
+        return "Thursday"
+    }
+    else if(week===5){
+        return "Friday"
+    }
+    else if(week===6){
+        return "Saturday"
+    }
+}
+console.log(getWeekDay(new Date(2023, 04, 30)));
+console.log(getWeekDay(Date.now()));
+
+function getWeekDay02 (date) {
+    const converted = new Date (date);
+    const week = converted.getDay();
+    switch (week){
+       case 0: return "Sunday"
+       case 1: return "Monday"
+       case 2: return "Tuesday"
+       case 3: return "Wednesday"
+       case 4: return "Thursday"
+       case 5: return "Friday"
+       case 6: return "Saturday"
+    }
+}
+console.log(getWeekDay02(new Date(3023, 04, 29)));
+console.log(getWeekDay02(Date.now()));
