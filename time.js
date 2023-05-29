@@ -36,6 +36,7 @@ console.log(date.toLocaleString('en-US'));
 console.log(date.toLocaleString('en-GB'));
 
 
+//решение 1
 function getWeekDay (date) {
     const converted = new Date (date);
     const week = converted.getDay();
@@ -64,6 +65,8 @@ function getWeekDay (date) {
 console.log(getWeekDay(new Date(2023, 04, 30)));
 console.log(getWeekDay(Date.now()));
 
+
+//решение 2
 function getWeekDay02 (date) {
     const converted = new Date (date);
     const week = converted.getDay();
@@ -76,6 +79,27 @@ function getWeekDay02 (date) {
        case 5: return "Friday"
        case 6: return "Saturday"
     }
+}
+console.log(getWeekDay02(new Date(3023, 04, 29)));
+console.log(getWeekDay02(Date.now()));
+
+
+//решение 3
+const weekList = {
+    0:"ВС",
+    1:"ПН",
+    2:"ВТ",
+    3:"СР",
+    4:"ЧТ",
+    5:"ПТ",
+    6:"СБ",
+}
+
+function getWeekDay03 (date) {
+    const converted = new Date (date);
+    const week = converted.getDay();
+
+    return weekList[week];
 }
 console.log(getWeekDay02(new Date(3023, 04, 29)));
 console.log(getWeekDay02(Date.now()));
