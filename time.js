@@ -101,5 +101,5 @@ function getWeekDay03 (date) {
 
     return weekList[week];
 }
-console.log(getWeekDay02(new Date(3023, 04, 29)));
-console.log(getWeekDay02(Date.now()));
+console.log(getWeekDay03(new Date(3023, 04, 29)));
+console.log(getWeekDay03(Date.now()));
