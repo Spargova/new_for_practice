@@ -103,3 +103,46 @@ function getWeekDay03 (date) {
 }
 console.log(getWeekDay03(new Date(3023, 04, 29)));
 console.log(getWeekDay03(Date.now()));
+
+
+
+function getFriendlyDate(date){
+    const converted = new Date (date);
+
+
+    if (isToday(converted)){
+        return "Today";
+    }
+    else if (isTomorrow(converted)){
+        return "Tomorrow";
+    }
+    else if(isYesterday(converted)){
+        return "Yesterday";
+    }
+    return converted.toLocaleDateString();
+}
+ 
+    function isToday(date){
+        const current = new Date();
+        return(date.toDateString() === current.toDateString());   
+    }
+
+
+    function isTomorrow(date){
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        return(date.toDateString() === tomorrow.toDateString);
+    }
+
+
+    function isYesterday(date){
+        const yesterday = new Date();
+        yesterday.setDate(yesterday.getDate() - 1);
+        return(date.toDateString() === yesterday.toDateString());
+
+    }
+
+
+console.log(getFriendlyDate(Date. now()));
+console.log(getFriendlyDate(new Date(2023, 4, 30)));
+console.log(getFriendlyDate(new Date(2023, 4, 31)));
