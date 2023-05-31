@@ -5,7 +5,7 @@ console.log(new Date("2023-05-29T11:46:10")); // международный фо
 console.log(new Date("2023-05-29T11:46:10Z")); // Z  в конце строки добавляет смещение по поясам
 console.log(new Date(1685350413000)); // время в формате Unix Timestemp
 
-console.log(Date.now ());// получим время Timestamp 
+console.log(Date.now());// получим время Timestamp 
 console.log(new Date());// вносим его в скобки
 const date = new Date();
 console.log(date);
@@ -25,7 +25,7 @@ console.log(date.getUTCHours()); //часы в формате UTC (без сме
 
 console.log(date.getTimezoneOffset()); // функция получения текущего часового пояса (в минутах)
 console.log(date.getTimezoneOffset() / 60); // ... в часах
- 
+
 console.log(date.toDateString()) // выводит дату в читаемом формате
 console.log(date.toISOString());
 console.log(date.toLocaleDateString());
@@ -37,28 +37,28 @@ console.log(date.toLocaleString('en-GB'));
 
 
 //решение 1
-function getWeekDay (date) {
-    const converted = new Date (date);
+function getWeekDay(date) {
+    const converted = new Date(date);
     const week = converted.getDay();
-    if (week===0){
+    if (week === 0) {
         return "Sunday"
     }
-    else if (week===1){
+    else if (week === 1) {
         return "Monday"
     }
-    else if (week===2){
+    else if (week === 2) {
         return "Tuesday"
     }
-    else if(week===3){
+    else if (week === 3) {
         return "Wednesday"
     }
-    else if(week===4){
+    else if (week === 4) {
         return "Thursday"
     }
-    else if(week===5){
+    else if (week === 5) {
         return "Friday"
     }
-    else if(week===6){
+    else if (week === 6) {
         return "Saturday"
     }
 }
@@ -67,17 +67,17 @@ console.log(getWeekDay(Date.now()));
 
 
 //решение 2
-function getWeekDay02 (date) {
-    const converted = new Date (date);
+function getWeekDay02(date) {
+    const converted = new Date(date);
     const week = converted.getDay();
-    switch (week){
-       case 0: return "Sunday"
-       case 1: return "Monday"
-       case 2: return "Tuesday"
-       case 3: return "Wednesday"
-       case 4: return "Thursday"
-       case 5: return "Friday"
-       case 6: return "Saturday"
+    switch (week) {
+        case 0: return "Sunday"
+        case 1: return "Monday"
+        case 2: return "Tuesday"
+        case 3: return "Wednesday"
+        case 4: return "Thursday"
+        case 5: return "Friday"
+        case 6: return "Saturday"
     }
 }
 console.log(getWeekDay02(new Date(3023, 04, 29)));
@@ -86,17 +86,17 @@ console.log(getWeekDay02(Date.now()));
 
 //решение 3
 const weekList = {
-    0:"ВС",
-    1:"ПН",
-    2:"ВТ",
-    3:"СР",
-    4:"ЧТ",
-    5:"ПТ",
-    6:"СБ",
+    0: "ВС",
+    1: "ПН",
+    2: "ВТ",
+    3: "СР",
+    4: "ЧТ",
+    5: "ПТ",
+    6: "СБ",
 }
 
-function getWeekDay03 (date) {
-    const converted = new Date (date);
+function getWeekDay03(date) {
+    const converted = new Date(date);
     const week = converted.getDay();
 
     return weekList[week];
@@ -106,43 +106,43 @@ console.log(getWeekDay03(Date.now()));
 
 
 
-function getFriendlyDate(date){
-    const converted = new Date (date);
+function getFriendlyDate(date) {
+    const converted = new Date(date);
 
 
-    if (isToday(converted)){
+    if (isToday(converted)) {
         return "Today";
     }
-    else if (isTomorrow(converted)){
+    else if (isTomorrow(converted)) {
         return "Tomorrow";
     }
-    else if(isYesterday(converted)){
+    else if (isYesterday(converted)) {
         return "Yesterday";
     }
     return converted.toLocaleDateString();
 }
- 
-    function isToday(date){
-        const current = new Date();
-        return(date.toDateString() === current.toDateString());   
-    }
+
+function isToday(date) {
+    const current = new Date();
+    return (date.toDateString() === current.toDateString());
+}
 
 
-    function isTomorrow(date){
-        const tomorrow = new Date();
-        tomorrow.setDate(tomorrow.getDate() + 1);
-        return(date.toDateString() === tomorrow.toDateString);
-    }
+function isTomorrow(date) {
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    return (date.toDateString() === tomorrow.toDateString);
+}
 
 
-    function isYesterday(date){
-        const yesterday = new Date();
-        yesterday.setDate(yesterday.getDate() - 1);
-        return(date.toDateString() === yesterday.toDateString());
+function isYesterday(date) {
+    const yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1);
+    return (date.toDateString() === yesterday.toDateString());
 
-    }
+}
 
 
-console.log(getFriendlyDate(Date. now()));
+console.log(getFriendlyDate(Date.now()));
+console.log(getFriendlyDate(new Date(2023, 5, 01)));
 console.log(getFriendlyDate(new Date(2023, 4, 30)));
-console.log(getFriendlyDate(new Date(2023, 4, 31)));
